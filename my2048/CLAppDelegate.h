@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WeiboSDK.h"
 
-@interface CLAppDelegate : UIResponder <UIApplicationDelegate>
+@interface CLAppDelegate : UIResponder <UIApplicationDelegate,WeiboSDKDelegate>
+{
+    NSString* _wbtoken;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (strong, nonatomic) NSString *wbtoken;
 @end

@@ -5,8 +5,12 @@
 //  Created by apple on 14-6-6.
 //  Copyright (c) 2014年 Felix M Lannister. All rights reserved.
 //
+#define kAppKey @"2500021022"
+#define kAppSecret @"8ad79cf6580689e11849407b15d5d06a"
+#define kAppRedirectURL @"https://api.weibo.com/oauth2/default.html"
 
 #import "CLAppDelegate.h"
+#import "CLMainViewController.h"
 
 @implementation CLAppDelegate
 
@@ -14,8 +18,15 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    CLMainViewController *mainCtl=[[CLMainViewController alloc]init];
+    self.window.rootViewController=mainCtl;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    //注册新浪微博
+    [WeiboSDK registerApp:kAppKey];
+    [WeiboSDK enableDebugMode:YES];
+    
     return YES;
 }
 
@@ -45,5 +56,58 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+- (void)didReceiveWeiboRequest:(WBBaseRequest *)request
+{
+    if ([request isKindOfClass:WBProvideMessageForWeiboRequest.class])
+    {
+    
+    }
+}
 
+- (void)didReceiveWeiboResponse:(WBBaseResponse *)response
+{
+    if ([response isKindOfClass:WBSendMessageToWeiboResponse.class])
+    {
+        if (response.statusCode==WeiboSDKResponseStatusCodeSuccess) {
+        NSString *title = nil;
+        NSString *message = @"分享成功";
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                        message:message
+                                                       delegate:nil
+                                              cancelButtonTitle:@"确定"
+                                              otherButtonTitles:nil];
+        [alert show];
+        }
+    }
+    else if ([response isKindOfClass:WBAuthorizeResponse.class])
+    {
+        if (response.statusCode==WeiboSDKResponseStatusCodeSuccess) {
+        NSString *title = nil;
+        NSString *message = @"授权成功";
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                        message:message
+                                                       delegate:nil
+                                              cancelButtonTitle:@"确定"
+                                              otherButtonTitles:nil];
+        
+        self.wbtoken = [(WBAuthorizeResponse *)response accessToken];
+        
+        [alert show];
+        [[NSUserDefaults standardUserDefaults] setObject:self.wbtoken forKey:@"acessToken"];
+    }
+    }
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    return [WeiboSDK handleOpenURL:url delegate:self];
+}
+
+/*
+ * 推荐实现上面的方法，两个方法二选一实现即可
+ - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+ {
+ return [ WeiboSDK handleOpenURL:url delegate:self ];
+ }
+ */
 @end

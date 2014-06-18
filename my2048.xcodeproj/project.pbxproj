@@ -19,6 +19,13 @@
 		1859EA4919419F470004AAC7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1859EA3119419F470004AAC7 /* UIKit.framework */; };
 		1859EA5119419F470004AAC7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1859EA4F19419F470004AAC7 /* InfoPlist.strings */; };
 		1859EA5319419F470004AAC7 /* my2048Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1859EA5219419F470004AAC7 /* my2048Tests.m */; };
+		1859EA5F19419F680004AAC7 /* CLMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1859EA5D19419F680004AAC7 /* CLMainViewController.m */; };
+		1859EA6019419F680004AAC7 /* CLMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1859EA5E19419F680004AAC7 /* CLMainViewController.xib */; };
+		1859EA6819419FBD0004AAC7 /* CLLuckyLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1859EA6719419FBD0004AAC7 /* CLLuckyLabel.m */; };
+		1895DA531942E8BE00D5809F /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1895DA501942E8BE00D5809F /* libWeiboSDK.a */; };
+		1895DA541942E8BE00D5809F /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1895DA511942E8BE00D5809F /* WeiboSDK.bundle */; };
+		1895DA561942FD5000D5809F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1895DA551942FD5000D5809F /* AudioToolbox.framework */; };
+		1895DA581942FE8000D5809F /* swipSound.caf in Resources */ = {isa = PBXBuildFile; fileRef = 1895DA571942FE8000D5809F /* swipSound.caf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +55,16 @@
 		1859EA4E19419F470004AAC7 /* my2048Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "my2048Tests-Info.plist"; sourceTree = "<group>"; };
 		1859EA5019419F470004AAC7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1859EA5219419F470004AAC7 /* my2048Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = my2048Tests.m; sourceTree = "<group>"; };
+		1859EA5C19419F680004AAC7 /* CLMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLMainViewController.h; sourceTree = "<group>"; };
+		1859EA5D19419F680004AAC7 /* CLMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLMainViewController.m; sourceTree = "<group>"; };
+		1859EA5E19419F680004AAC7 /* CLMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CLMainViewController.xib; sourceTree = "<group>"; };
+		1859EA6619419FBD0004AAC7 /* CLLuckyLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLLuckyLabel.h; sourceTree = "<group>"; };
+		1859EA6719419FBD0004AAC7 /* CLLuckyLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLLuckyLabel.m; sourceTree = "<group>"; };
+		1895DA501942E8BE00D5809F /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeiboSDK.a; sourceTree = "<group>"; };
+		1895DA511942E8BE00D5809F /* WeiboSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WeiboSDK.bundle; sourceTree = "<group>"; };
+		1895DA521942E8BE00D5809F /* WeiboSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboSDK.h; sourceTree = "<group>"; };
+		1895DA551942FD5000D5809F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		1895DA571942FE8000D5809F /* swipSound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = swipSound.caf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,9 +72,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1895DA561942FD5000D5809F /* AudioToolbox.framework in Frameworks */,
 				1859EA3019419F470004AAC7 /* CoreGraphics.framework in Frameworks */,
 				1859EA3219419F470004AAC7 /* UIKit.framework in Frameworks */,
 				1859EA2E19419F470004AAC7 /* Foundation.framework in Frameworks */,
+				1895DA531942E8BE00D5809F /* libWeiboSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +115,7 @@
 		1859EA2C19419F470004AAC7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1895DA551942FD5000D5809F /* AudioToolbox.framework */,
 				1859EA2D19419F470004AAC7 /* Foundation.framework */,
 				1859EA2F19419F470004AAC7 /* CoreGraphics.framework */,
 				1859EA3119419F470004AAC7 /* UIKit.framework */,
@@ -107,8 +127,15 @@
 		1859EA3319419F470004AAC7 /* my2048 */ = {
 			isa = PBXGroup;
 			children = (
+				1895DA571942FE8000D5809F /* swipSound.caf */,
+				1895DA4F1942E8BE00D5809F /* libWeiboSDK */,
 				1859EA3C19419F470004AAC7 /* CLAppDelegate.h */,
 				1859EA3D19419F470004AAC7 /* CLAppDelegate.m */,
+				1859EA5C19419F680004AAC7 /* CLMainViewController.h */,
+				1859EA5D19419F680004AAC7 /* CLMainViewController.m */,
+				1859EA5E19419F680004AAC7 /* CLMainViewController.xib */,
+				1859EA6619419FBD0004AAC7 /* CLLuckyLabel.h */,
+				1859EA6719419FBD0004AAC7 /* CLLuckyLabel.m */,
 				1859EA3F19419F470004AAC7 /* Images.xcassets */,
 				1859EA3419419F470004AAC7 /* Supporting Files */,
 			);
@@ -142,6 +169,16 @@
 				1859EA4F19419F470004AAC7 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1895DA4F1942E8BE00D5809F /* libWeiboSDK */ = {
+			isa = PBXGroup;
+			children = (
+				1895DA501942E8BE00D5809F /* libWeiboSDK.a */,
+				1895DA511942E8BE00D5809F /* WeiboSDK.bundle */,
+				1895DA521942E8BE00D5809F /* WeiboSDK.h */,
+			);
+			path = libWeiboSDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,8 +257,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1859EA6019419F680004AAC7 /* CLMainViewController.xib in Resources */,
 				1859EA3819419F470004AAC7 /* InfoPlist.strings in Resources */,
 				1859EA4019419F470004AAC7 /* Images.xcassets in Resources */,
+				1895DA541942E8BE00D5809F /* WeiboSDK.bundle in Resources */,
+				1895DA581942FE8000D5809F /* swipSound.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +280,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1859EA6819419FBD0004AAC7 /* CLLuckyLabel.m in Sources */,
+				1859EA5F19419F680004AAC7 /* CLMainViewController.m in Sources */,
 				1859EA3A19419F470004AAC7 /* main.m in Sources */,
 				1859EA3E19419F470004AAC7 /* CLAppDelegate.m in Sources */,
 			);
@@ -363,6 +405,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "my2048/my2048-Prefix.pch";
 				INFOPLIST_FILE = "my2048/my2048-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/apple/我的2048/my2048/my2048/libWeiboSDK",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -376,6 +422,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "my2048/my2048-Prefix.pch";
 				INFOPLIST_FILE = "my2048/my2048-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/apple/我的2048/my2048/my2048/libWeiboSDK",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -442,6 +492,7 @@
 				1859EA5819419F470004AAC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1859EA5919419F470004AAC7 /* Build configuration list for PBXNativeTarget "my2048Tests" */ = {
 			isa = XCConfigurationList;
@@ -450,6 +501,7 @@
 				1859EA5B19419F470004AAC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
